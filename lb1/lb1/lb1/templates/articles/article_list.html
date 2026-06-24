@@ -1,0 +1,20 @@
+
+
+{% block title %}Статті{% endblock %}
+
+{% block content %}
+  <h1>Останні статті</h1>
+
+  {% if articles %}
+    <ul>
+      {% for article in articles %}
+        <li>
+          <h2>{{ article.title }}</h2>
+          <div>{{ article.content|linebreaks }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Статей немає.</p>
+  {% endif %}
+{% endblock %}
